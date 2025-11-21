@@ -129,7 +129,7 @@
     
     /* Font families */
     --font-family-behind-the-nineties: 'Behind The Nineties', sans-serif;
-    --font-family-inter: 'Inter', sans-serif;
+    --font-family-inter: 'DM Sans', sans-serif;
     
     /* Spacing scale (4px increments for fine control) - not in tokens.json, kept for layout */
     --spacing-0: 0;
@@ -321,7 +321,7 @@
 }
 
 .hero-title {
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-family-behind-the-nineties);
     font-size: var(--font-size-0);
     line-height: var(--line-height-0);
     font-weight: var(--font-weight-regular);
@@ -349,7 +349,7 @@
 }
 
 .serif {
-    font-family: 'Libre Baskerville', serif;
+    font-family: var(--font-family-inter);
 }
 
 .eyebrow {
