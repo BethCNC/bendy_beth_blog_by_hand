@@ -169,7 +169,7 @@
     --border-disabled: var(--neutral-500);
     --border-active: var(--neutral-600);
     --border-hover: var(--neutral-400);
-    --border-default: var(--neutral-300);
+    --border-default: var(--black);
     
     /* Icon colours */
     --icon-info: var(--blue-500);
