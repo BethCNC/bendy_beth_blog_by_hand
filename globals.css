@@ -394,6 +394,18 @@ body {
     border-bottom: 2px solid var(--border-default);
 }
 
+/* Add padding to box sections, but exclude hero, quote, cards, and sections with contact-grid which have their own padding */
+.box:not(.hero):not(.quote):not(.card) {
+    padding-top: var(--spacing-24);
+    padding-bottom: var(--spacing-24);
+}
+
+/* Remove padding from sections that contain contact-grid since they have internal padding */
+.section:has(.contact-grid).box {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .serif {
     font-family: var(--font-family-serif);
 }
@@ -585,11 +597,6 @@ body {
     color: var(--text-primary);
     text-align: center;
     margin: 0;
-    display: flex;
-    gap: var(--spacing-2);
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 /* Contact grid - modular layout */
@@ -639,9 +646,11 @@ body {
     margin: 0;
     font-size: 4.5rem; /* 72px - matches Figma spec */
     line-height: 6rem; /* 96px - matches Figma spec */
-    font-family: var(--font-family-behind-the-nineties);
-    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-behind-the-nineties), var(--font-family-inter);
+    font-weight: var(--font-weight-bold);
     color: var(--text-primary);
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
 }
 
 .contact-form {
