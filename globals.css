@@ -130,6 +130,7 @@
     /* Font families */
     --font-family-behind-the-nineties: 'Behind The Nineties', sans-serif;
     --font-family-inter: 'DM Sans', sans-serif;
+    --font-family-serif: 'Libre Baskerville', serif;
     
     /* Spacing scale (4px increments for fine control) - not in tokens.json, kept for layout */
     --spacing-0: 0;
@@ -254,8 +255,13 @@
    Base Styles
    ========================================================================== */
 
+html,
+body {
+    background-color: var(--background-primary-active);
+}
+
 .background {
-    background-color: var(--background-primary-default);
+    background-color: var(--background-primary-active);
     color: var(--text-primary);
     font-family: var(--font-family-inter);
     line-height: 1.5;
@@ -263,8 +269,10 @@
 
 /* Page frame vertical lines (left/right) to echo the prototype grid */
 .page-frame {
-    border-left: 1px solid var(--border-default);
-    border-right: 1px solid var(--border-default);
+    border-left: 2px solid var(--border-default);
+    border-right: 2px solid var(--border-default);
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -272,8 +280,8 @@
    ========================================================================== */
 
 .site-header {
-    background-color: var(--background-primary-default);
-    border-bottom: 1px solid var(--border-default);
+    background-color: var(--background-primary-active);
+    border-bottom: 2px solid var(--border-default);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -304,10 +312,29 @@
     font-size: var(--font-size-8);
     font-weight: var(--font-weight-medium);
     transition: color 0.2s ease;
+    position: relative;
+    padding-bottom: var(--spacing-3);
 }
 
 .nav-link:hover {
     color: var(--text-primary);
+}
+
+/* Figma: subtle underline per nav item */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 0;
+    border-bottom: 1px solid var(--border-default);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    opacity: 1;
 }
 
 /* ==========================================================================
@@ -317,11 +344,18 @@
 .hero {
     padding-top: var(--spacing-24);
     padding-bottom: var(--spacing-20);
-    border-bottom: 1px solid var(--border-default);
+    border-left: 2px solid var(--border-default);
+    border-right: 2px solid var(--border-default);
+}
+
+.hero .container {
+    padding-left: var(--spacing-24);
+    padding-right: var(--spacing-24);
 }
 
 .hero-title {
-    font-family: var(--font-family-behind-the-nineties);
+    /* Match display serif from Figma */
+    font-family: var(--font-family-serif);
     font-size: var(--font-size-0);
     line-height: var(--line-height-0);
     font-weight: var(--font-weight-regular);
@@ -341,15 +375,27 @@
    Section framing and text utilities
    ========================================================================== */
 .section {
-    background-color: var(--background-primary-default);
+    background-color: var(--background-primary-active);
+}
+
+/* Modular grid: sections with left/right borders */
+.section:not(.hero):not(.quote):not(:has(.cards)):not(:has(.contact-grid)) {
+    border-left: 2px solid var(--border-default);
+    border-right: 2px solid var(--border-default);
+}
+
+.section:not(.hero):not(.quote):not(:has(.cards)):not(:has(.contact-grid)) .container {
+    padding-left: var(--spacing-24);
+    padding-right: var(--spacing-24);
 }
 
 .box {
-    border-bottom: 1px solid var(--border-default);
+    border-top: 2px solid var(--border-default);
+    border-bottom: 2px solid var(--border-default);
 }
 
 .serif {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-serif);
 }
 
 .eyebrow {
@@ -366,8 +412,9 @@
 }
 
 .body.small {
-    font-size: var(--font-size-10);
-    line-height: var(--line-height-8);
+    font-size: var(--font-size-7); /* 18px - matches Figma spec */
+    line-height: var(--line-height-6); /* 24px - matches Figma spec */
+    font-weight: var(--font-weight-medium); /* 500 - matches Figma spec */
 }
 
 .narrow {
@@ -387,12 +434,14 @@
     background-color: var(--black);
     color: var(--white);
     padding: 10px 16px;
-    font-size: var(--font-size-10);
+    font-size: var(--font-size-10); /* 14px - matches Figma spec */
+    line-height: 1.25rem; /* 20px - matches Figma spec */
+    font-weight: var(--font-weight-medium); /* 500 - matches Figma spec */
     border: 1px solid var(--black);
 }
 
 .btn-dark.sm {
-    padding: 8px 12px;
+    padding: 8px 12px; /* Matches Figma spec */
 }
 
 .btn-dark .arrow {
@@ -403,79 +452,234 @@
    Info Grid
    ========================================================================== */
 
-/* Cards layout for conditions */
+/* Cards layout for conditions - modular grid */
 .cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-8);
+    gap: 0;
+    border-left: 2px solid var(--border-default);
+    border-right: 2px solid var(--border-default);
 }
 
 @media (min-width: 1024px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-10);
+        gap: 0;
     }
 }
 
 .card {
-    padding: var(--spacing-8);
+    /* Default state: border, yellow background */
+    border-top: 2px solid var(--border-default);
+    border-bottom: 2px solid var(--border-default);
+    border-left: none;
+    border-right: 2px solid var(--border-default);
+    background-color: var(--background-primary-active);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    min-width: 400px;
+    width: 100%;
+}
+
+/* First card in row - no left border */
+.cards > .card:first-child {
+    border-left: 2px solid var(--border-default);
+}
+
+/* Last card in row - no right border */
+.cards > .card:last-child {
+    border-right: none;
+}
+
+@media (min-width: 1024px) {
+    /* First card in each row */
+    .cards > .card:nth-child(3n+1) {
+        border-left: 2px solid var(--border-default);
+    }
+    
+    /* Last card in each row */
+    .cards > .card:nth-child(3n) {
+        border-right: none;
+    }
+    
+    /* Middle cards - no left border */
+    .cards > .card:nth-child(3n+2),
+    .cards > .card:nth-child(3n+3) {
+        border-left: none;
+    }
+}
+
+/* Hover state: slightly lighter yellow */
+.card:hover {
+    background-color: var(--background-primary-hover);
+    cursor: pointer;
+}
+
+/* Active state: dark background, white text */
+.card:active,
+.card.active {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.card.active .card-heading,
+.card:active .card-heading {
+    color: var(--white);
+}
+
+.card.active .body,
+.card:active .body {
+    color: var(--white);
+}
+
+.card.active .btn-dark,
+.card:active .btn-dark {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+}
+
+/* Remove margins from body elements inside cards since we use flexbox gap */
+.card .body {
+    margin: 0;
+}
+
+/* Cards section - modular grid with borders */
+.section:has(.cards) {
+    border-left: none;
+    border-right: none;
+}
+
+.section:has(.cards) .container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
 }
 
 .card-heading {
-    margin: 0 0 var(--spacing-4) 0;
-    font-size: var(--font-size-4);
+    margin: 0;
+    font-size: 2.5rem; /* 40px - matches Figma spec */
+    line-height: 3rem; /* 48px - matches Figma spec */
+    font-weight: var(--font-weight-semibold); /* 600 */
+    font-family: var(--font-family-inter);
+    color: var(--text-primary);
 }
 
-/* Quote stripe */
+/* Quote stripe - modular grid */
 .quote {
-    text-align: center;
-}
-.quote-text {
-    margin: var(--spacing-6) auto;
-    font-weight: var(--font-weight-semibold);
+    border-top: 2px solid var(--border-default);
+    border-bottom: 2px solid var(--border-default);
+    border-left: 2px solid var(--border-default);
+    border-right: 2px solid var(--border-default);
+    padding: var(--spacing-12) 0; /* 48px vertical */
 }
 
-/* Contact grid */
+.quote-text {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-3); /* 32px */
+    line-height: var(--line-height-5); /* 36px */
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing-2);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Contact grid - modular layout */
+.section:has(.contact-grid) {
+    border-left: 2px solid var(--border-default);
+    border-right: 2px solid var(--border-default);
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-16);
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
+    padding: var(--spacing-24) var(--spacing-24); /* 96px vertical and horizontal */
 }
 
 @media (min-width: 1024px) {
     .contact-grid {
         grid-template-columns: 1fr 1fr;
+        padding: var(--spacing-24) var(--spacing-24); /* 96px vertical and horizontal */
     }
 }
 
+.contact-copy {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border-default);
+    border-right: none;
+    background-color: var(--background-primary-active);
+}
+
+.contact-copy-header {
+    border-top: 2px solid var(--border-default);
+    padding: var(--spacing-12) var(--spacing-12); /* 48px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-copy-form {
+    border-top: 2px solid var(--border-default);
+    border-bottom: 2px solid var(--border-default);
+    padding: var(--spacing-12) var(--spacing-12); /* 48px */
+}
+
 .contact-heading {
-    margin: 0 0 var(--spacing-8) 0;
-    font-size: var(--font-size-3);
-    line-height: var(--line-height-3);
+    margin: 0;
+    font-size: 4.5rem; /* 72px - matches Figma spec */
+    line-height: 6rem; /* 96px - matches Figma spec */
+    font-family: var(--font-family-behind-the-nineties);
+    font-weight: var(--font-weight-regular);
+    color: var(--text-primary);
 }
 
 .contact-form {
     display: flex;
-    gap: var(--spacing-2);
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
+}
+
+.contact-form .btn-dark {
+    flex-shrink: 0;
+    padding: var(--spacing-3) var(--spacing-5); /* 12px 20px */
+    font-size: var(--font-size-8); /* 16px */
+    line-height: var(--line-height-3); /* 24px */
+    border-right: none;
 }
 
 .input {
-    height: 32px;
-    padding: 0 10px;
-    border: 1px solid var(--border-default);
-    background: transparent;
-    font-size: var(--font-size-10);
+    flex: 1;
+    height: auto;
+    padding: var(--spacing-3); /* 12px */
+    border: 2px solid var(--border-default);
+    border-left: none;
+    background-color: var(--background-primary-active);
+    font-size: var(--font-size-8); /* 16px */
+    line-height: var(--line-height-3); /* 24px */
     color: var(--text-primary);
+    font-family: var(--font-family-inter);
+    font-weight: var(--font-weight-medium);
 }
 
 .brand-lockup {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 200px;
-    border-left: 1px solid var(--border-default);
+    padding: var(--spacing-30) var(--spacing-32); /* 120px 144px */
+    border: 2px solid var(--border-default);
+    background-color: var(--background-primary-active);
+    min-height: auto;
 }
 
 .logo-mark {
@@ -489,28 +693,174 @@
    ========================================================================== */
 
 .site-footer {
-    background-color: var(--background-primary-default);
+    background-color: var(--black);
     padding: 0;
     border-top: 0;
+    position: relative;
 }
 
 .footer-bottom-links {
-    border-top: 1px solid var(--border-default);
+    border-top: 2px solid var(--white);
 }
+
 .footer-links-row {
     display: flex;
-    justify-content: space-between;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+}
+
+.footer-links-row .copyright {
+    flex-shrink: 0;
+    width: 719px;
+    border: 2px solid var(--white);
+    border-left: none;
+    border-right: none;
+    padding: var(--spacing-6) 0; /* 24px vertical */
+    display: flex;
     align-items: center;
-    gap: var(--spacing-6);
-    padding-top: var(--spacing-4);
-    padding-bottom: var(--spacing-4);
+    justify-content: center;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-5); /* 24px */
+    line-height: var(--line-height-4); /* 32px */
+    font-weight: var(--font-weight-medium);
+    color: var(--white);
 }
+
+.footer-inline-links {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
+
 .footer-inline-links a {
-    color: var(--text-secondary);
+    flex: 1;
+    color: var(--white);
     text-decoration: none;
-    font-size: var(--font-size-10);
-    margin-left: var(--spacing-6);
+    font-size: var(--font-size-5); /* 24px */
+    line-height: var(--line-height-4); /* 32px */
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family-inter);
+    border: 2px solid var(--white);
+    border-left: 2px solid var(--white);
+    border-right: none;
+    border-top: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    padding: var(--spacing-6) 0; /* 24px vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
 }
+
+.footer-inline-links a:last-child {
+    border-right: none;
+}
+
 .footer-inline-links a:hover {
-    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Mobile responsive styles - maintain modular grid */
+@media (max-width: 1023px) {
+    /* Cards mobile - stack vertically with borders */
+    .cards {
+        border-left: 2px solid var(--border-default);
+        border-right: 2px solid var(--border-default);
+    }
+    
+    .card {
+        border-left: none;
+        border-right: none;
+        border-top: 2px solid var(--border-default);
+    }
+    
+    .cards > .card:first-child {
+        border-top: none;
+    }
+    
+    .cards > .card:last-child {
+        border-bottom: 2px solid var(--border-default);
+    }
+    
+    /* Footer mobile layout */
+    .footer-links-row {
+        flex-direction: column;
+    }
+    
+    .footer-links-row .copyright {
+        width: 100%;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-color: var(--white);
+    }
+    
+    .footer-inline-links {
+        flex-direction: column;
+    }
+    
+    .footer-inline-links a {
+        border-left: none;
+        border-right: none;
+        border-top: 2px solid var(--white);
+        border-bottom: none;
+        border-color: var(--white);
+    }
+    
+    .footer-inline-links a:last-child {
+        border-bottom: 2px solid var(--white);
+    }
+    
+    /* Quote mobile */
+    .quote {
+        padding: var(--spacing-6) 0; /* 24px vertical */
+    }
+    
+    .quote-text {
+        font-size: var(--font-size-10); /* 14px */
+        line-height: var(--line-height-2); /* 20px */
+        flex-direction: column;
+        gap: var(--spacing-1); /* 4px */
+    }
+    
+    /* Contact mobile */
+    .contact-heading {
+        font-size: var(--font-size-2); /* 40px */
+        line-height: var(--line-height-7); /* 48px */
+        text-align: center;
+    }
+    
+    .contact-form {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .contact-form .btn-dark {
+        width: 100%;
+        border-right: 2px solid var(--border-default);
+        border-bottom: none;
+    }
+    
+    .input {
+        width: 100%;
+        border-left: 2px solid var(--border-default);
+        border-top: none;
+    }
+    
+    .brand-lockup {
+        padding: var(--spacing-6); /* 24px */
+        border-top: none;
+    }
+    
+    /* Section padding mobile */
+    .section:not(.hero):not(.quote):not(:has(.cards)):not(:has(.contact-grid)) .container {
+        padding-left: var(--spacing-6);
+        padding-right: var(--spacing-6);
+    }
+    
+    .hero .container {
+        padding-left: var(--spacing-6);
+        padding-right: var(--spacing-6);
+    }
 }
