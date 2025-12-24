@@ -1,0 +1,166 @@
+# Beth's Health Journey Blog - Project Overview & Rules
+
+## 🎯 **Project Overview**
+
+**Beth's Health Journey Blog** is a personal blog website where Beth shares her experience with chronic illness (hEDS, POTS, MCAS) to help others in similar situations. This website serves as a **link from Beth's social media accounts** (`@bendy_bethc`) to provide a comprehensive platform for sharing her story, building community, and advocating for better healthcare.
+
+### **Website Purpose**
+- **Personal Healing**: Share Beth's own story for her own healing journey
+- **Community Support**: Help others going through similar experiences over the past 7 years
+- **Awareness & Advocacy**: Share news and raise awareness about chronic illness
+- **Resource Hub**: Provide practical help and resources for fellow "zebras"
+- **Social Media Extension**: Serve as a comprehensive link from Instagram and Facebook
+
+### **Social Media Integration**
+- **Instagram**: [@bendy_bethc](https://www.instagram.com/bendy_bethc/)
+- **Facebook**: [Beth Cartrette](https://www.facebook.com/profile.php?id=61575866557538)
+- **Domain**: www.bendybethc.com
+- **Future Platforms**: YouTube, TikTok (to be set up later)
+
+## 🏗️ **Tech Stack & Architecture**
+
+### **Frontend Stack**
+- **Next.js 14** with App Router
+- **TypeScript** for type safety
+- **CSS Utility Classes** with comprehensive design system
+- **Overused Grotesk** and **Behind The Nineties** font families
+- **MDX** for rich blog content
+- **Lucide React** for icons
+
+### **Content Management**
+- **Markdown/MDX** for blog posts
+- **Static Generation** for performance
+- **SEO Optimized** with metadata
+- **Image Optimization** with Next.js Image
+
+### **Development Tools**
+- **ESLint** for code quality
+- **TypeScript** for type safety
+- **Git** for version control
+- **Prettier** for code formatting
+
+
+
+### **Links (`/links`)**
+- **Social media accounts**
+  - Instagram: [@bendy_bethc](https://www.instagram.com/bendy_bethc/)
+  - Facebook: [Beth Cartrette](https://www.facebook.com/profile.php?id=61575866557538)
+- **Latest blog posts** (top 3)
+- **Current projects/campaigns**
+- **Resource recommendations**
+- **Email newsletter signup**
+
+### **Resources (`/resources`)**
+- **Curated tools** for newly diagnosed
+- **Advocacy resources**
+- **Community connections**
+- **Caregiver support**
+
+### **Coming Soon (`/coming-soon`)**
+- **Placeholder page** for future features
+- **Newsletter signup**
+- **Social media links**
+
+
+
+### **Recommended Platform**
+- **Vercel** - Optimized for Next.js with automatic deployments
+- **Domain** - www.bendybethc.com
+- **SSL** - Automatic HTTPS for security
+- **CDN** - Global content delivery for fast loading
+
+### **Environment Variables**
+```env
+NEXT_PUBLIC_SITE_URL=https://bendybethc.com
+```
+
+### **Build Process**
+```bash
+npm run build    # Build for production
+npm run start    # Start production server
+npm run dev      # Development server
+```
+
+## 📊 **Success Metrics**
+
+### **Engagement Metrics**
+- **Blog post read time** - Target 3+ minutes
+- **Email signup rate** - Target 5% of visitors
+- **Contact form submissions** - Quality over quantity
+- **Social media shares** - Community amplification
+
+### **Community Building**
+- **Return visitor rate** - Building loyal following
+- **Comment engagement** - Meaningful conversations
+- **Resource page usage** - Helping others
+- **Cross-platform traffic** - Social media effectiveness
+
+### **Content Performance**
+- **Search ranking** - Chronic illness keywords
+- **Resource downloads/clicks** - Value provided
+- **Speaking/collaboration requests** - Professional opportunities
+- **Community mentions** - Advocacy impact
+
+## 🛠 **Development Guidelines (Updated)**
+
+### **Code Style**
+- **TypeScript** - Strict mode with proper typing
+- **CSS Classes** - Use design system utility classes from `styles.css`
+- **Component Structure** - Small, focused components with minimal props
+- **Accessibility** - WCAG guidelines for disability community
+- **Performance** - Optimize for Core Web Vitals
+
+
+### **Content Guidelines**
+- **Personal Tone** - Beth's authentic voice
+- **Medical Accuracy** - Appropriate terminology
+- **Hope-Focused** - Encouraging and supportive
+- **Actionable** - Practical advice and resources
+- **Disclaimers** - Personal experience, not medical advice
+
+## 🤝 **Community & Advocacy**
+
+### **Target Audience**
+- **Newly Diagnosed Patients** - Finding hope and practical advice
+- **Established Community Members** - Staying connected and supported
+- **Healthcare Professionals** - Learning patient perspectives
+- **Advocates** - Building partnerships and collaborations
+
+### **Content Categories**
+- **Diagnosis Journey** - Medical discovery stories
+- **Daily Management** - Practical living tips
+- **Advocacy** - Healthcare navigation advice
+- **Community** - Connection and support stories
+- **Resources** - Helpful tools and links
+
+### **"Zebra" Community**
+- **Medical saying**: "When you hear hoofbeats, think horses, not zebras"
+- **Zebras** = People with rare conditions often misdiagnosed
+- **Community aspect** is crucial - Beth wants to help other zebras
+
+## 📱 **Social Media Strategy**
+
+### **Platform Integration**
+- **Instagram** - Primary platform for visual content and stories
+- **Facebook** - Community building and longer-form content
+- **Website** - Comprehensive resource hub and blog
+- **Future Platforms** - YouTube, TikTok for video content
+
+### **Content Cross-Promotion**
+- **Instagram Stories** - Link to blog posts and resources
+- **Facebook Posts** - Share blog content and community updates
+- **Website** - Central hub for all social media content
+- **Newsletter** - Weekly/monthly roundup of content
+
+### **Community Engagement**
+- **Social Media** - Daily engagement with community
+- **Website** - Comprehensive resources and blog content
+- **Email Newsletter** - Regular updates and exclusive content
+- **Speaking/Events** - In-person and virtual community building
+
+---
+
+**Last Updated**: January 2025  
+**Version**: 4.0  
+**Owner**: Beth Cartrette  
+**Review Schedule**: Monthly

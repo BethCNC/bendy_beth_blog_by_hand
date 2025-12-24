@@ -1,0 +1,297 @@
+{
+  "letter-spacing": {
+    "tracking-tighter": {
+      "$type": "letterSpacing",
+      "$value": "-4%",
+      "$description": "-0.5em"
+    },
+    "tracking-tight": {
+      "$type": "letterSpacing",
+      "$value": "-2%",
+      "$description": "-0.025em"
+    },
+    "tracking-normal": {
+      "$type": "letterSpacing",
+      "$value": "0%",
+      "$description": "0em"
+    },
+    "tracking-wide": {
+      "$type": "letterSpacing",
+      "$value": "4%",
+      "$description": "0.025em"
+    }
+  },
+  "paragraph-spacing": {
+    "space-between": {
+      "0": {
+        "$type": "paragraphSpacing",
+        "$value": "0",
+        "$description": "In Tailwind CSS, the property for controlling the vertical space between paragraphs is handled by the space-y-{amount} utility class. This class allows you to quickly and easily set the space between paragraphs, with {amount} being replaced by the spacing size you want to apply."
+      }
+    }
+  },
+  "text-indent": {
+    "indent-0": {
+      "$type": "dimension",
+      "$value": "{dimensions.fixed.0}",
+      "$description": "0px"
+    },
+    "indent-px": {
+      "$type": "dimension",
+      "$value": "{dimensions.fixed.px}",
+      "$description": "1px"
+    },
+    "indent-1": {
+      "$type": "dimension",
+      "$value": "{dimensions.fixed.1}",
+      "$description": "4px"
+    },
+    "indent-2": {
+      "$type": "dimension",
+      "$value": "{dimensions.fixed.2}",
+      "$description": "8px"
+    },
+    "indent-3": {
+      "$type": "dimension",
+      "$value": "{dimensions.fixed.3}",
+      "$description": "12px"
+    },
+    "indent-4": {
+      "$type": "dimension",
+      "$value": "{dimensions.fixed.4}",
+      "$description": "16px"
+    }
+  },
+  "font-size": {
+    "text-sm": {
+      "$type": "fontSizes",
+      "$value": "0.75rem",
+      "$description": "12px"
+    },
+    "text-base": {
+      "$type": "fontSizes",
+      "$value": "1rem",
+      "$description": "16px Smallest body size"
+    },
+    "text-lg": {
+      "$type": "fontSizes",
+      "$value": "1.25rem",
+      "$description": "20px"
+    },
+    "text-xl": {
+      "$type": "fontSizes",
+      "$value": "1.5rem",
+      "$description": "24px"
+    },
+    "text-2xl": {
+      "$type": "fontSizes",
+      "$value": "2rem",
+      "$description": "32px"
+    },
+    "text-3xl": {
+      "$type": "fontSizes",
+      "$value": "2.5rem",
+      "$description": "36px"
+    },
+    "text-4xl": {
+      "$type": "fontSizes",
+      "$value": "3rem",
+      "$description": "48px"
+    },
+    "text-5xl": {
+      "$type": "fontSizes",
+      "$value": "3.5rem",
+      "$description": "56px"
+    },
+    "text-6xl": {
+      "$type": "fontSizes",
+      "$value": "4.5rem",
+      "$description": "72px"
+    },
+    "text-7xl": {
+      "$type": "fontSizes",
+      "$value": "5.5rem",
+      "$description": "88px"
+    },
+    "text-8xl": {
+      "$type": "fontSizes",
+      "$value": "6.75rem",
+      "$description": "108px"
+    }
+  },
+  "absolute": {
+    "line-height": {
+      "text-lg": {
+        "leading-normal": {
+          "$type": "lineHeights",
+          "$value": "2rem",
+          "$description": "32px"
+        },
+        "leading-snug": {
+          "$type": "lineHeights",
+          "$value": "1.75rem",
+          "$description": "28px"
+        }
+      },
+      "text-sm": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "0.75rem",
+          "$description": "12px"
+        },
+        "leading-normal": {
+          "$type": "lineHeights",
+          "$value": "1rem",
+          "$description": "16px"
+        }
+      },
+      "text-base": {
+        "leading-normal": {
+          "$type": "lineHeights",
+          "$value": "1.5rem",
+          "$description": "24px"
+        },
+        "leading-snug": {
+          "$type": "lineHeights",
+          "$value": "1.25rem",
+          "$description": "20px"
+        }
+      },
+      "text-4xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "3rem",
+          "$description": "48px"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "3.75rem",
+          "$description": "60px"
+        }
+      },
+      "text-3xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "2.5rem",
+          "$description": "40px"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "3.25rem",
+          "$description": "52px"
+        }
+      },
+      "text-xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "1.5rem",
+          "$description": "24px"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "2rem",
+          "$description": "32px"
+        }
+      },
+      "text-7xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "5.5rem"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "6.75rem",
+          "$description": "108px"
+        }
+      },
+      "text-6xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "4.75rem",
+          "$description": "72px"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "5.5rem",
+          "$description": "88px"
+        }
+      },
+      "text-5xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "3.5rem"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "4.25rem",
+          "$description": "68px"
+        }
+      },
+      "text-2xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "2rem",
+          "$description": "32px"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "2.5rem",
+          "$description": "40px"
+        }
+      },
+      "text-8xl": {
+        "leading-none": {
+          "$type": "lineHeights",
+          "$value": "6.75rem",
+          "$description": "108"
+        },
+        "leading-tight": {
+          "$type": "lineHeights",
+          "$value": "8.75rem",
+          "$description": "140px"
+        }
+      }
+    }
+  },
+  "notes": {
+    "setname": {
+      "dimensions-scale": {
+        "$type": "other",
+        "$value": "primitives/text-dimension-scale"
+      }
+    },
+    "line-height": {
+      "leading-normal": {
+        "$type": "other",
+        "$value": "1.5 rounded to factor of 4",
+        "$description": "Calculated in a template set using the formula:\n\nceil(roundTo({fontSize_token}*{1.5},0) /{factor})*{factor}\n\nwhere factor = 4\n\nto ensure that the line heights, which control the size of the text containers, always land on the 4pt grid."
+      },
+      "leading-snug": {
+        "$type": "other",
+        "$value": "1.375 rounded to factor of 4",
+        "$description": "Calculated in a template set using the formula:\n\nceil(roundTo({fontSize_token}*{1.375},0) /{factor})*{factor}\n\nwhere factor = 4\n\nto ensure that the line heights, which control the size of the text containers, always land on the 4pt grid."
+      },
+      "font-size-pairing": {
+        "$type": "other",
+        "$value": "Absolute values are calculated based on font size",
+        "$description": "This means if you change the font size, you'll want to recalculate the absolute values, or switch to relative line hights, which exist in the default token set. "
+      },
+      "leading-tight": {
+        "$type": "other",
+        "$value": "add notes"
+      }
+    },
+    "font-size": {
+      "customization": {
+        "$type": "other",
+        "$value": "required",
+        "$description": "The font sizes in this token set differ from the Tailwind standard values. \n\nThe tailwind docs state \"You can configure your own custom set of font size utilities using the theme.fontSize section of your tailwind.config.js file.\" - https://tailwindcss.com/docs/font-size"
+      },
+      "rem-scale": {
+        "$type": "other",
+        "$value": "1.2 multiplier and rounded to factor of 4",
+        "$description": "These font sizes were calculated using a base of 1rem = 16px, sizing scale of 1.2 then rounded to the nearest factor of 4 to ensure all sizes sit on the 4px grid.\n\nThese tokens have a prefix of \"rem-scale\" added to them for easy identification. \n\nYou can swap the font sizes to the standard values if you want, which are also included without this prefix. "
+      }
+    }
+  }
+}

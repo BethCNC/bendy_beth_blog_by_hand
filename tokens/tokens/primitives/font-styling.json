@@ -1,0 +1,131 @@
+{
+  "font-weight": {
+    "sans": {
+      "font-thin-100": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-thin}"
+      },
+      "font-extralight-200": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-extralight}"
+      },
+      "font-normal-400": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-regular}"
+      },
+      "font-light-300": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-light}"
+      },
+      "font-medium-500": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-medium}"
+      },
+      "font-semibold-600": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-semibold}"
+      },
+      "font-bold-700": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-bold}"
+      },
+      "font-extrabold-800": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-extrabold}"
+      },
+      "font-black-900": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.dm-sans-black}"
+      }
+    },
+    "serif": {
+      "font-medium-500": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.behind-the-nineties-medium}"
+      },
+      "font-normal-400": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.behind-the-nineties-regular}"
+      },
+      "font-semibold-600": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.behind-the-nineties-semibold}"
+      },
+      "font-bold-700": {
+        "$type": "fontWeights",
+        "$value": "{fontWeights.behind-the-nineties-bold}"
+      }
+    }
+  },
+  "font-family": {
+    "font-sans": {
+      "$type": "fontFamilies",
+      "$value": "{fontFamilies.dm-sans}"
+    },
+    "font-serif": {
+      "$type": "fontFamilies",
+      "$value": "{fontFamilies.behind-the-nineties}"
+    }
+  },
+  "text-transform": {
+    "normal-case": {
+      "$type": "textCase",
+      "$value": "none",
+      "$description": "Selects the \"As typed\" case option in Figma's typography design properties. In Tailwind CSS they note \"The normal-case utility can be used to preserve the original casing — typically to reset capitalization at different breakpoints.\""
+    },
+    "uppercase": {
+      "$type": "textCase",
+      "$value": "uppercase"
+    },
+    "lowercase": {
+      "$type": "textCase",
+      "$value": "lowercase"
+    },
+    "capitalize": {
+      "$type": "textCase",
+      "$value": "capitalize",
+      "$description": "Selects the \"Title case\" case option in Figma's typography design properties which doesn't behave as epected but rather capitalizes the first letter of every word."
+    }
+  },
+  "text-decoration-line": {
+    "none": {
+      "$type": "textDecoration",
+      "$value": "none"
+    },
+    "underline": {
+      "$type": "textDecoration",
+      "$value": "underline"
+    },
+    "line-through": {
+      "$type": "textDecoration",
+      "$value": "line-through"
+    }
+  },
+  "notes": {
+    "font-weight": {
+      "numeric-values": {
+        "$type": "other",
+        "$value": "Figma limitation",
+        "$description": "Figma has a written version of the weight, which is combined with some additional styling properties, like italics. This doesn't match the way Tailwind handles font, weights. \n\nSo the names of the tokens contain the numeric value of the property which matches the class name as best as possible. \n\nTailwind docs on Font Weight followed live here https://tailwindcss.com/docs/font-weight"
+      },
+      "customizing": {
+        "$type": "other",
+        "$value": "error prone",
+        "$description": "Figma has a unique way of handling weights in that it uses a written value combined with some styling properties, like italics. The written value is also different between type faces. I suggest if you want to change the typeface and weight, to create them as styles in Figma to import the individual tokens in its own set, and customize from there. "
+      }
+    },
+    "font-family": {
+      "customizing": {
+        "$type": "other",
+        "$value": "error prone",
+        "$description": "Figma has a unique way of handling font families in that it uses a written value of font weights combined with some styling properties, like italics. The written value of font weights are different between type faces. I suggest if you want to change the typeface and weight, to create them as styles in Figma to import the individual tokens in its own set, and customize from there. \n\nSee the token set typeface-satoshi for an example. "
+      }
+    }
+  },
+  "set-name": {
+    "font-styling": {
+      "$type": "other",
+      "$value": "primitives/font-styling"
+    }
+  }
+}

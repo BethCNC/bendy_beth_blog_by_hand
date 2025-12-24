@@ -1,0 +1,199 @@
+# Notion-Powered CMS Blog for React/Vite Projects
+
+## Overview
+
+This documentation outlines how to set up, connect, and maintain a scalable, design-system-driven blog using Notion as your headless CMS and React/Vite as your front-end framework. It covers database structure, content workflow, API integration, rendering, and best practices for keeping your site visually in sync with your brand and Figma designs.
+
+---
+
+## 1. Notion Blog Database Design
+
+**Each blog post is a row in a Notion database. Properties (columns) correspond to fields in your blog layout.**
+
+### **Recommended Properties:**
+
+| Property Name    | Type           | Purpose / Maps to Design                 |
+| ---------------- | -------------- | ---------------------------------------- |
+| Title            | Title          | Blog post headline (H1)                  |
+| Slug             | Text           | For clean URLs (e.g. `/blog/post-title`) |
+| Date             | Date           | Publish date; for cards/post pages       |
+| Tags             | Multi-select   | Category chips ("Mind & Body", etc.)     |
+| Summary          | Text/Rich Text | Excerpt for cards/SEO                    |
+| Cover Image      | Files & media  | Main image for post                      |
+| Featured         | Checkbox       | Show as “Featured Post” on blog home     |
+| Content          | Text/Rich Text | Main post body (or use Notion page)      |
+| Author           | Person/Text    | (Optional: Display author name)          |
+| Reading Time     | Number/Text    | (Optional: Show read time on cards)      |
+| Related Posts    | Relation       | Link to other posts (“Related Posts”)    |
+| Instagram Images | Files & media  | For the Instagram-style image strip      |
+| Published        | Checkbox       | Only show posts checked “Published”      |
+
+---
+
+## 2. Authoring Workflow in Notion
+
+1. **Write or edit blog posts directly in Notion** (table or board view).
+2. **Set the "Published" checkbox to TRUE** to show on your site.
+3. **Upload cover images and any Instagram or gallery images.**
+4. **Assign tags, summary, and feature as needed.**
+5. **Link related posts via the Relation property.**
+6. **Posts can be drafted and scheduled with the Date property.**
+
+---
+
+## 3. Connecting Notion to Your React Site
+
+### **A. Prerequisites**
+
+- Create a [Notion Integration](https://www.notion.so/my-integrations) and copy your Internal Integration Token.
+- Share your blog database with the integration (click "Share" → select your integration).
+- Find your database’s ID from the URL.
+- Add your secrets to a `.env` file in your project root:
+  ```
+  NOTION_TOKEN=secret_...
+  NOTION_DATABASE_ID=...
+  ```
+
+### **B. Install Notion SDK**
+
+```bash
+npm install @notionhq/client
+```
+
+### **C. Fetching Posts Example**
+
+```js
+// src/notion.js
+import { Client } from "@notionhq/client";
+const notion = new Client({ auth: process.env.NOTION_TOKEN });
+
+export async function fetchPublishedPosts(databaseId) {
+  const { results } = await notion.databases.query({
+    database_id: databaseId,
+    filter: { property: "Published", checkbox: { equals: true } },
+    sorts: [{ property: "Date", direction: "descending" }]
+  });
+  return results.map(page => ({
+    id: page.id,
+    title: page.properties.Title.title[0]?.plain_text,
+    slug: page.properties.Slug.rich_text[0]?.plain_text,
+    date: page.properties.Date.date.start,
+    summary: page.properties.Summary.rich_text[0]?.plain_text,
+    cover: page.properties.CoverImage.files[0]?.file.url,
+    tags: page.properties.Tags.multi_select.map(t => t.name),
+    featured: page.properties.Featured.checkbox,
+    contentId: page.id // for rich content rendering
+  }));
+}
+```
+
+---
+
+## 4. Rendering in React
+
+- **List view** (Blog Home): Map through posts and display Featured/Latest/Categories blocks as in your Figma layout.
+- **Single Post Page:** Fetch by slug, display all properties (cover, title, summary, date, tags, etc.), and render full content.
+
+### **Rendering Rich Content (Full Notion Pages)**
+
+- Use [`react-notion-x`](https://github.com/NotionX/react-notion-x) for rendering all blocks (headings, images, lists, embeds) from the Notion page body:
+  ```jsx
+  import { NotionRenderer } from "react-notion-x";
+  // ...
+  <NotionRenderer recordMap={recordMap} />
+  ```
+- For simple text/rich text, render the mapped property as-is.
+
+---
+
+## 5. Category, Featured, Latest, and Related Posts
+
+- **Featured Post:** Filter for posts where `Featured` is TRUE.
+- **Latest Posts:** Sort by date, show most recent (with pagination if needed).
+- **Categories:** Group posts by values in `Tags` property.
+- **Related Posts:** Use Notion’s Relation property to link and display other posts.
+
+---
+
+## 6. Instagram Strip and Image Galleries
+
+- Use a property like `Instagram Images` (Files & media, or a related database) to store and fetch gallery images for your footer or dedicated sections.
+
+---
+
+## 7. Styling with Your Design Tokens
+
+- Reference your CSS variables/tokens (colors, radius, typography) in all blog templates/components.
+- No matter what content is in Notion, your frontend will always be on-brand and visually consistent.
+
+---
+
+## 8. Updating and Maintaining
+
+- To update posts, simply edit in Notion. No code changes required.
+- To change categories or add new fields, update the Notion database and map new properties in your data fetching/rendering code.
+- To rebrand or redesign, update your tokens and React components—content stays in Notion, presentation in code.
+
+---
+
+## 9. Optional: SEO & Static Generation
+
+- For best SEO, consider static or SSR rendering (Next.js, Vite SSR).
+- Pre-render blog home and post pages at build time if possible.
+- Use the Notion API at build or deploy to fetch and generate content.
+
+---
+
+## 10. Example: Blog Home Mapping (Pseudo-code)
+
+```jsx
+<main>
+  <header>...Blog Banner...</header>
+  <section>{/* Featured Post */}</section>
+  <section>{/* Latest Posts Grid */}</section>
+  <aside>{/* Categories List */}</aside>
+  <footer>{/* Instagram Strip & Footer */}</footer>
+</main>
+```
+
+---
+
+## 11. Advanced Features
+
+- **Drafts:** Filter out posts where `Published` is FALSE.
+- **Search:** Filter posts client- or server-side by title, summary, or tags.
+- **Pagination:** Use Notion API’s pagination options to load posts in pages.
+- **Custom Embeds:** Use Notion’s native embeds, or extend the renderer for YouTube, Instagram, etc.
+
+---
+
+## 12. Best Practices & Tips
+
+- **Keep Notion database tidy:** Only expose intended fields to the API.
+- **Use slugs, not titles, for URLs:** More SEO-friendly, avoids issues with duplicate titles.
+- **Test on staging:** Try with real posts and edge-case content (long titles, lots of tags, empty fields).
+- **Sync content on deploy:** If statically generated, rebuild your site after major content updates.
+
+---
+
+## 13. Resources
+
+- [Notion API Docs](https://developers.notion.com/)
+- [@notionhq/client](https://github.com/makenotion/notion-sdk-js)
+- [react-notion-x](https://github.com/NotionX/react-notion-x)
+- [Vite SSR Guide](https://vitejs.dev/guide/ssr.html)
+
+---
+
+## 14. Recap: The Content/Design Split
+
+- **Content:** Authored, stored, and updated in Notion.
+- **Design & Layout:** Controlled entirely in React/Vite with tokens, always on-brand.
+- **Publishing:** A one-step workflow—edit in Notion, site updates instantly or on rebuild.
+
+---
+
+**With this setup, your site is always visually in sync with your Figma designs, and your team or clients can update blog content without touching code.**
+
+---
+
