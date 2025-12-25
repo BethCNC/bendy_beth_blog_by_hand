@@ -1,0 +1,182 @@
+---
+alwaysApply: false
+---
+# Components Library Color Update Guide (Theme‑Light)
+
+This document defines **how to update the `components/library` token collection** so that all component colors:
+- Reference **theme‑light tokens only**
+- Match the **current button color patterns** you already updated
+- Follow the **neutral usage rules**, **60‑30‑10 color balance**, and **Tokens Studio best practices**
+- Avoid invalid token usage (e.g. border width as spacing, text colors as backgrounds)
+
+This is a **guided refactor**, not a redesign.
+
+---
+
+## 1. Non‑Negotiable Rules
+
+- Components MUST reference **theme‑light tokens only**
+- Components MUST NOT reference primitive color ramps directly
+- Do NOT introduce opacity to simulate states
+- Do NOT mix token types (color vs dimension vs typography)
+- Disabled states MUST use explicit color tokens
+- Small interactive components MUST NOT use warm surfaces
+
+---
+
+## 2. Theme‑Light Token Categories (Authoritative)
+
+Only the following groups may be used by components:
+
+- `theme-colors.background.*`
+- `theme-colors.surface.*`
+- `theme-colors.text.*`
+- `theme-colors.foreground.*`
+- `theme-colors.border.*`
+- `theme-colors.icon.*`
+- `theme-colors.primary.*`
+- `theme-colors.secondary.*`
+- `theme-colors.success.*`
+- `theme-colors.warning.*`
+- `theme-colors.danger.*`
+- `theme-colors.info.*`
+
+If a color does not fit one of these roles, it does **not** belong in components.
+
+---
+
+## 3. Neutral Color Usage Rules (Critical)
+
+### Neutral‑Cool (Primary UI Neutral)
+Used for:
+- Text
+- Icons
+- Borders
+- Inputs
+- Buttons (neutral / default / ghost)
+
+Never use warm neutrals for:
+- Buttons
+- Inputs
+- Toggles
+- Tabs
+- Dropdowns
+
+### Neutral‑Warm (Surface‑Only)
+Used ONLY for:
+- App canvas
+- Page backgrounds
+- Large containers
+- Non‑interactive surfaces
+
+Never use warm neutrals for:
+- Small components
+- Interactive elements
+- Hover states
+
+---
+
+## 4. Button Color Pattern (Source of Truth)
+
+All other components must follow this pattern.
+
+### Primary Button
+- Background: `theme-colors.primary.default`
+- Hover: `theme-colors.primary.hover`
+- Active: `theme-colors.primary.active`
+- Text: `theme-colors.text.primary`
+
+### Secondary Button
+- Background: `theme-colors.secondary.default`
+- Hover: `theme-colors.secondary.hover`
+- Active: `theme-colors.secondary.active`
+- Text: `theme-colors.text.primary`
+
+### Neutral / Default Button
+- Background: `theme-colors.background.inverse`
+- Hover: `theme-colors.background.inverse-hover`
+- Active: `theme-colors.background.inverse-active`
+- Text: `theme-colors.foreground.negative`
+
+### Ghost / Subtle Button
+- Background: `theme-colors.background.transparent`
+- Hover: `theme-colors.background.hover`
+- Active: `theme-colors.background.active`
+- Text: `theme-colors.text.primary`
+
+### Disabled Button (All Variants)
+- Background: `theme-colors.surface.disabled`
+- Border: `theme-colors.border.disabled`
+- Text/Icon: `theme-colors.text.disabled`
+
+No opacity. Ever.
+
+---
+
+## 5. State Handling Rules
+
+### Hover
+- Always use a **dedicated hover token**
+- Never derive hover via opacity
+
+### Active
+- Must step darker or stronger than hover
+
+### Disabled
+- Must change **surface, border, and text**
+- Must remain readable and clearly inert
+
+---
+
+## 6. Borders
+
+Allowed:
+- `theme-colors.border.default`
+- `theme-colors.border.subtle`
+- `theme-colors.border.active`
+- `theme-colors.border.disabled`
+
+Disallowed:
+- Using text colors as borders
+- Using background colors as borders
+
+---
+
+## 7. Common Mistakes to Fix
+
+| ❌ Incorrect | ✅ Correct |
+|-------------|-----------|
+| Text token used as background | Background or surface token |
+| Border width used as spacing | Fixed dimension token |
+| Opacity for hover | Dedicated hover color |
+| Warm neutral on button | Neutral‑cool background |
+
+---
+
+## 8. Component Audit Checklist
+
+For each component:
+
+- [ ] All colors reference `theme‑light`
+- [ ] No primitive colors used
+- [ ] No opacity used for state
+- [ ] Disabled uses explicit tokens
+- [ ] Small components avoid warm surfaces
+- [ ] Token type matches property
+
+---
+
+## 9. Intent
+
+This system is:
+- Soft
+- Muted
+- Pastel
+- Editorial
+- Accessible
+- Explicit
+
+Every color choice should look **intentional**, not derived.
+
+If a component cannot follow these rules, the **theme token is wrong** — not the component.
+
