@@ -22,3 +22,15 @@
 [debug] [2025-12-24T07:07:16.498Z] > authorizing via signed-in user (beth@bethcnc.com)
 [debug] [2025-12-24T07:07:16.499Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
 [debug] [2025-12-24T07:07:16.499Z] > authorizing via signed-in user (beth@bethcnc.com)
+[debug] [2025-12-25T04:50:26.504Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-25T04:50:26.505Z] > authorizing via signed-in user (beth@bethcnc.com)
+[debug] [2025-12-25T04:50:26.513Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-25T04:50:26.513Z] > authorizing via signed-in user (beth@bethcnc.com)
+[debug] [2025-12-25T04:50:26.588Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-25T04:50:26.589Z] > authorizing via signed-in user (beth@bethcnc.com)
+[debug] [2025-12-25T04:50:26.589Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-25T04:50:26.589Z] > authorizing via signed-in user (beth@bethcnc.com)
+[debug] [2025-12-25T04:50:26.605Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-25T04:50:26.605Z] > authorizing via signed-in user (beth@bethcnc.com)
+[debug] [2025-12-25T04:50:26.605Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-25T04:50:26.606Z] > authorizing via signed-in user (beth@bethcnc.com)
