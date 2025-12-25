@@ -1,122 +1,265 @@
----
-alwaysApply: false
----
-# Disabled State Color Usage  
-**Warm, Beachy UI Design System**
+# Gray & Neutral Color Usage
+**Design System Semantic Guide (Authoritative)**
 
-This document defines how **disabled UI states** should look and behave within this design system.  
-It aligns with the system’s core principles: **warmth, clarity, accessibility, and calm editorial tone**.
+This document defines **how gray / neutral colors are used across the entire design system**.  
+Its purpose is to eliminate ambiguity, prevent drift, and ensure accessibility **without relying on opacity**.
 
----
-
-## Purpose of Disabled States
-
-Disabled states communicate that an element is:
-
-- **Unavailable** (not interactive right now)
-- **Intentional** (not broken or loading)
-- **Contextual** (still part of the interface)
-
-In this system, disabled elements should feel *quiet and resting*, not erased or visually punished.
+This guide reflects the **current pastel, soft, editorial color system** and supersedes all previous neutral documentation.
 
 ---
 
-## Design Principles
+## Core philosophy (read this first)
 
-Disabled UI should:
+Neutrals in this system are **role-based**, not aesthetic-only.
 
-- Reduce visual emphasis without disappearing
-- Avoid opacity-only solutions
-- Stay visually consistent with the environment
-- Preserve legibility and hierarchy
-- Maintain WCAG-accessible contrast where possible
+Each neutral family has a **job**:
 
-Disabled ≠ error  
-Disabled ≠ inactive brand color  
-Disabled = **environmental quiet**
+- **neutral-cool** → structure, clarity, readability
+- **neutral-warm** → large canvas + atmosphere
+- **neutral (true gray)** → utility + disabled states
 
----
-
-## Semantic Tokens for Disabled States
-
-Disabled states are derived from the **neutral-warm** scale, which represents the system’s environmental surfaces (sand, paper, warmth).
-
-### Token Mapping
-
-| Semantic Token     | Primitive Token        | Hex       | Usage |
-|-------------------|------------------------|-----------|-------|
-| `bg-disabled`     | `neutral-warm.100`     | `#ede3d6` | Disabled buttons, inputs, cards |
-| `text-disabled`   | `neutral-warm.500`     | `#a88763` | Labels, button text, helper text |
-| `border-disabled` | `neutral-warm.300`     | `#d1b89a` | Input outlines, dividers |
-| `icon-disabled`   | `neutral-warm.500`     | `#a88763` | Icons inside disabled components |
+> **Rule:**  
+> Small interactive components (buttons, inputs, toggles) **do NOT use warm surfaces**.  
+> Warm neutrals are reserved for **large surfaces only**.
 
 ---
 
-## Usage Guidelines
+## The three neutral families
 
-### Backgrounds
-Use `bg-disabled` for:
-- Disabled buttons
-- Disabled form fields
-- Non-interactive cards
+### 1) `neutral-cool` — Structure & readability
+Use for:
+- text
+- icons
+- borders
+- dividers
+- outlines
+- UI chrome
 
-This color should clearly differ from active surfaces while remaining warm and calm.
+**Visual intent:**  
+Nearly achromatic gray with a subtle cool bias.  
+It should *never* read as blue.
+
+**Why:**  
+Cool neutrals preserve contrast and legibility without visual warmth bleeding into text.
 
 ---
+
+### 2) `neutral-warm` — Canvas & atmosphere
+Use **only** for:
+- page backgrounds
+- large panels
+- section containers
+- card groups
+- editorial surfaces
+
+**Do NOT use for:**
+- buttons
+- inputs
+- toggles
+- chips
+- small UI controls
+
+**Visual intent:**  
+Soft paper warmth. Calm. Background-only.
+
+---
+
+### 3) `neutral` (true gray) — Utility & inactive
+Use for:
+- disabled surfaces
+- skeletons
+- neutral fills where warmth/coolness would distract
+
+**Visual intent:**  
+Boring, flat, unmistakably inactive.
+
+---
+
+## Hard rules (non-negotiable)
+
+- Components **must not** use raw ramp values directly  
+- Components **must** use semantic tokens
+- Disabled states **never use opacity**
+- Brand colors are **never** used for disabled
+- Small components **never use warm surfaces**
+- A single component should not mix warm + cool neutrals unless explicitly required
+
+---
+
+## Semantic gray roles (required)
+
+These semantic tokens must exist and be used consistently.
 
 ### Text
-Use `text-disabled` for:
-- Button labels
-- Input text
-- Helper or hint text inside disabled components
+- `color.text.primary`
+- `color.text.secondary`
+- `color.text.tertiary`
+- `color.text.placeholder`
+- `color.text.disabled`
+- `color.text.inverse`
 
-Text should remain readable, but visually secondary.
+### Surfaces
+- `color.surface.canvas`
+- `color.surface.subtle`
+- `color.surface.default`
+- `color.surface.raised`
+- `color.surface.disabled`
 
----
+### Borders
+- `color.border.subtle`
+- `color.border.default`
+- `color.border.strong`
+- `color.border.disabled`
 
-### Borders & Icons
-Use subtle warmth for outlines and icons to avoid harsh contrast:
-- Borders: `neutral-warm.300`
-- Icons: same as disabled text
-
----
-
-## Do / Don’t Rules
-
-### Do
-- Use **color shifts**, not opacity, to signal disabled state
-- Keep disabled elements visually aligned with surrounding UI
-- Apply disabled styles consistently across components
-- Favor warmth over cool gray tones
-
-### Don’t
-- Use brand colors for disabled states
-- Reduce opacity below ~50%
-- Use neutral-cool grays for disabled UI
-- Rely on disabled color alone to communicate state (cursor + behavior should also change)
+### Icons
+- `color.icon.default`
+- `color.icon.muted`
+- `color.icon.disabled`
+- `color.icon.inverse`
 
 ---
 
-## Accessibility Notes
+## Canonical mappings — Light theme
 
-- Disabled elements should still be legible
-- Disabled text does not need to meet full contrast ratios if non-interactive, but should remain readable
-- Never rely solely on opacity to indicate disabled state
-- Cursor and interaction behavior must reinforce the visual state
+### Text ladder (do not deviate)
 
----
+| Role | Token |
+|----|----|
+| Primary | `neutral-cool.900` |
+| Secondary | `neutral-cool.700` |
+| Tertiary | `neutral-cool.600` |
+| Placeholder | `neutral-cool.500` |
+| Disabled | `neutral-cool.400` |
+| Inverse | `white` |
 
-## System Logic Summary
-
-- **Active UI:** brand colors + neutral
-- **Structure / chrome:** neutral & neutral-cool
-- **Environment / background:** neutral-warm
-- **Disabled:** darker, quieter neutral-warm
-
-This keeps the system cohesive, accessible, and emotionally consistent.
+> This ladder is intentional.  
+> Skipping steps breaks hierarchy and accessibility.
 
 ---
 
-## Version
-Designed to pair with the **warm beachy neutral-warm scale** introduced in the current color primitives.
+### Surface usage (light)
 
+#### Large surfaces only
+| Semantic role | Token |
+|----|----|
+| Canvas | `neutral-warm.50` |
+| Subtle section | `neutral-warm.100` |
+| Grouped panels | `neutral-warm.200` |
+
+#### Small components (default)
+| Semantic role | Token |
+|----|----|
+| Default surface | `white` |
+| Raised surface | `white` + shadow |
+| Subtle surface | `neutral.50` |
+
+> **Important:**  
+> Buttons, inputs, toggles, pills, and controls use **neutral or white**, not warm tones.
+
+---
+
+### Borders (light)
+
+| Role | Token |
+|----|----|
+| Subtle | `neutral-cool.200` |
+| Default | `neutral-cool.300` |
+| Strong | `neutral-cool.400` |
+| Disabled | `neutral-cool.300` |
+
+Borders remain visible even when disabled.
+
+---
+
+## Disabled states (no opacity, ever)
+
+Disabled is communicated using **three simultaneous changes**:
+
+### Required disabled recipe
+- **Surface:** `neutral.100`
+- **Border:** `neutral-cool.300`
+- **Text / Icon:** `neutral-cool.400`
+
+If one of these is missing, the disabled state is considered **incorrect**.
+
+---
+
+## Component patterns (gray-only examples)
+
+### Buttons (neutral / secondary)
+
+**Default**
+- bg: `color.surface.default`
+- border: `color.border.default`
+- text: `color.text.primary`
+
+**Disabled**
+- bg: `color.surface.disabled`
+- border: `color.border.disabled`
+- text: `color.text.disabled`
+
+---
+
+### Inputs
+
+**Default**
+- bg: `color.surface.default`
+- border: `color.border.default`
+- text: `color.text.primary`
+- placeholder: `color.text.placeholder`
+
+**Disabled**
+- bg: `color.surface.disabled`
+- border: `color.border.disabled`
+- text: `color.text.disabled`
+- placeholder: `color.text.disabled`
+
+---
+
+### Cards / Panels
+
+**Large cards**
+- bg: `color.surface.subtle` (warm)
+- border: `color.border.subtle`
+- heading: `color.text.primary`
+- body: `color.text.secondary`
+
+**Small cards**
+- bg: `color.surface.default`
+- border: `color.border.subtle`
+
+---
+
+## Common mistakes (do not do these)
+
+- Using warm neutrals for buttons or inputs
+- Using opacity to signal disabled
+- Picking `neutral-warm.300` because “it looks nice”
+- Mixing warm + cool neutrals inside a single small component
+- Using placeholder color instead of disabled color
+
+---
+
+## Quick audit checklist (2 minutes)
+
+If something feels off, check:
+
+- Is text following the **text ladder**?
+- Are warm neutrals only used on **large surfaces**?
+- Are disabled states using **surface + border + text**, not opacity?
+- Are borders cool-neutral, not warm?
+- Are components using semantic tokens instead of raw ramps?
+
+If all answers are “yes,” the neutrals are correct.
+
+---
+
+## Why this system works
+
+- Warm neutrals create mood **without harming legibility**
+- Cool neutrals keep structure crisp
+- True grays make disabled states obvious
+- Semantic roles prevent aesthetic drift
+- Accessibility is preserved without opacity hacks
+
+This is intentional, restrained, and scalable.
