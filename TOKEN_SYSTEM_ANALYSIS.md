@@ -2,6 +2,14 @@
 **Date:** 2024  
 **Purpose:** Thorough gut check of tokens.json for logical consistency, aesthetic coherence, and UI/UX best practices
 
+## ⚠️ CRITICAL BRAND COLOR IDENTITY
+
+**Primary Brand Color = BRAND-YELLOW**
+- `theme-colors.primary.*` → `{colors.brand-yellow.*}` (main brand color)
+- `theme-colors.secondary.*` → `{colors.brand-blue.*}` (secondary brand color)
+- Primary buttons, CTAs, and key interactive elements MUST use `theme-colors.primary.*` (brand-yellow)
+- This is a non-negotiable brand identity rule
+
 ---
 
 ## ✅ STRENGTHS

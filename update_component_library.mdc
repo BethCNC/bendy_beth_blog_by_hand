@@ -3,6 +3,17 @@ alwaysApply: false
 ---
 # Components Library Color Update Guide (Theme‑Light)
 
+## ⚠️ CRITICAL: Primary Brand Color
+
+**The primary brand color is BRAND-YELLOW.**
+
+- `theme-colors.primary.*` = **brand-yellow** (the main brand color)
+- `theme-colors.secondary.*` = **brand-blue** (the secondary brand color)
+- Primary buttons, CTAs, and key interactive elements MUST use `theme-colors.primary.*` (brand-yellow)
+- This is a non-negotiable brand identity rule
+
+---
+
 This document defines **how to update the `components/library` token collection** so that all component colors:
 - Reference **theme‑light tokens only**
 - Match the **current button color patterns** you already updated
@@ -34,12 +45,14 @@ Only the following groups may be used by components:
 - `theme-colors.foreground.*`
 - `theme-colors.border.*`
 - `theme-colors.icon.*`
-- `theme-colors.primary.*`
-- `theme-colors.secondary.*`
+- `theme-colors.primary.*` → **Brand Yellow** (primary brand color)
+- `theme-colors.secondary.*` → **Brand Blue** (secondary brand color)
 - `theme-colors.success.*`
 - `theme-colors.warning.*`
 - `theme-colors.danger.*`
 - `theme-colors.info.*`
+
+**CRITICAL:** `theme-colors.primary.*` = **brand-yellow** (the primary brand color). This is the main brand color and should be used for primary actions, CTAs, and key interactive elements.
 
 If a color does not fit one of these roles, it does **not** belong in components.
 
@@ -80,17 +93,21 @@ Never use warm neutrals for:
 
 All other components must follow this pattern.
 
-### Primary Button
-- Background: `theme-colors.primary.default`
-- Hover: `theme-colors.primary.hover`
-- Active: `theme-colors.primary.active`
-- Text: `theme-colors.text.primary`
+**IMPORTANT:** The primary brand color is **brand-yellow**. This is the main brand color and should be used for primary actions.
 
-### Secondary Button
-- Background: `theme-colors.secondary.default`
-- Hover: `theme-colors.secondary.hover`
-- Active: `theme-colors.secondary.active`
-- Text: `theme-colors.text.primary`
+### Primary Button (Brand Yellow)
+- **Background:** `theme-colors.primary.default` → `{colors.brand-yellow.500}`
+- **Hover:** `theme-colors.primary.hover` → `{colors.brand-yellow.600}`
+- **Active:** `theme-colors.primary.active` → `{colors.brand-yellow.700}`
+- **Text:** `theme-colors.text.primary` (dark text on yellow background)
+- **Purpose:** Main call-to-action, primary brand color button
+
+### Secondary Button (Brand Blue)
+- **Background:** `theme-colors.secondary.default` → `{colors.brand-blue.500}`
+- **Hover:** `theme-colors.secondary.hover` → `{colors.brand-blue.600}`
+- **Active:** `theme-colors.secondary.active` → `{colors.brand-blue.700}`
+- **Text:** `theme-colors.text.primary` (dark text on blue background)
+- **Purpose:** Secondary actions, supporting brand color
 
 ### Neutral / Default Button
 - Background: `theme-colors.background.inverse`
