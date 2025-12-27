@@ -1,0 +1,26 @@
+{
+  "fontFamilies": {
+    "behind-the-nineties": {
+      "$type": "fontFamilies",
+      "$value": "Behind The Nineties"
+    }
+  },
+  "fontWeights": {
+    "behind-the-nineties-bold": {
+      "$type": "fontWeights",
+      "$value": "Bold"
+    },
+    "behind-the-nineties-semibold": {
+      "$type": "fontWeights",
+      "$value": "Semibold"
+    },
+    "behind-the-nineties-medium": {
+      "$type": "fontWeights",
+      "$value": "Medium"
+    },
+    "behind-the-nineties-regular": {
+      "$type": "fontWeights",
+      "$value": "Regular"
+    }
+  }
+}

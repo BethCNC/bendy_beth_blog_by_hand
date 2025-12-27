@@ -1,0 +1,687 @@
+{
+  "dimensions": {
+    "fixed": {
+      "0": {
+        "$type": "dimension",
+        "$value": "0px"
+      },
+      "1": {
+        "$type": "dimension",
+        "$value": "0.25rem",
+        "$description": "4px"
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "0.5rem",
+        "$description": "8px"
+      },
+      "3": {
+        "$type": "dimension",
+        "$value": "0.75rem",
+        "$description": "12px"
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "1rem",
+        "$description": "16px"
+      },
+      "5": {
+        "$type": "dimension",
+        "$value": "1.25rem",
+        "$description": "20px"
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "$description": "24px"
+      },
+      "7": {
+        "$type": "dimension",
+        "$value": "1.75rem",
+        "$description": "28px"
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "2rem",
+        "$description": "32px"
+      },
+      "9": {
+        "$type": "dimension",
+        "$value": "2.25rem",
+        "$description": "36px"
+      },
+      "10": {
+        "$type": "dimension",
+        "$value": "2.5rem",
+        "$description": "40px"
+      },
+      "11": {
+        "$type": "dimension",
+        "$value": "2.75rem",
+        "$description": "44px"
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "3rem",
+        "$description": "48px"
+      },
+      "13": {
+        "$type": "dimension",
+        "$value": "3.25rem",
+        "$description": "52px"
+      },
+      "14": {
+        "$type": "dimension",
+        "$value": "3.5rem",
+        "$description": "56px"
+      },
+      "15": {
+        "$type": "dimension",
+        "$value": "3.75rem",
+        "$description": "60px"
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "4rem",
+        "$description": "64px"
+      },
+      "17": {
+        "$type": "dimension",
+        "$value": "4.25rem",
+        "$description": "68px"
+      },
+      "18": {
+        "$type": "dimension",
+        "$value": "4.5rem",
+        "$description": "72px"
+      },
+      "19": {
+        "$type": "dimension",
+        "$value": "4.25rem",
+        "$description": "76px"
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "5rem",
+        "$description": "80px"
+      },
+      "21": {
+        "$type": "dimension",
+        "$value": "5.25rem",
+        "$description": "84px"
+      },
+      "22": {
+        "$type": "dimension",
+        "$value": "5.5rem",
+        "$description": "88px"
+      },
+      "23": {
+        "$type": "dimension",
+        "$value": "5.75rem",
+        "$description": "92px"
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "6rem",
+        "$description": "96px"
+      },
+      "25": {
+        "$type": "dimension",
+        "$value": "6.25rem",
+        "$description": "100px"
+      },
+      "26": {
+        "$type": "dimension",
+        "$value": "6.5rem",
+        "$description": "104px"
+      },
+      "27": {
+        "$type": "dimension",
+        "$value": "6.75rem",
+        "$description": "108px"
+      },
+      "28": {
+        "$type": "dimension",
+        "$value": "7rem",
+        "$description": "112px"
+      },
+      "29": {
+        "$type": "dimension",
+        "$value": "7.25rem",
+        "$description": "116px"
+      },
+      "30": {
+        "$type": "dimension",
+        "$value": "7.5rem",
+        "$description": "120px"
+      },
+      "31": {
+        "$type": "dimension",
+        "$value": "7.75rem",
+        "$description": "124px"
+      },
+      "32": {
+        "$type": "dimension",
+        "$value": "8rem",
+        "$description": "128px"
+      },
+      "33": {
+        "$type": "dimension",
+        "$value": "8.25rem",
+        "$description": "132px"
+      },
+      "34": {
+        "$type": "dimension",
+        "$value": "8.5rem",
+        "$description": "136px"
+      },
+      "35": {
+        "$type": "dimension",
+        "$value": "8.75rem",
+        "$description": "140px"
+      },
+      "36": {
+        "$type": "dimension",
+        "$value": "9rem",
+        "$description": "144px"
+      },
+      "37": {
+        "$type": "dimension",
+        "$value": "9.25rem",
+        "$description": "148px"
+      },
+      "38": {
+        "$type": "dimension",
+        "$value": "9.5rem",
+        "$description": "152px"
+      },
+      "39": {
+        "$type": "dimension",
+        "$value": "9.75rem",
+        "$description": "156px"
+      },
+      "40": {
+        "$type": "dimension",
+        "$value": "10rem",
+        "$description": "160px"
+      },
+      "41": {
+        "$type": "dimension",
+        "$value": "10.25rem",
+        "$description": "164px"
+      },
+      "42": {
+        "$type": "dimension",
+        "$value": "10.5rem",
+        "$description": "168px"
+      },
+      "43": {
+        "$type": "dimension",
+        "$value": "10.75rem",
+        "$description": "172px"
+      },
+      "44": {
+        "$type": "dimension",
+        "$value": "11rem",
+        "$description": "176px"
+      },
+      "45": {
+        "$type": "dimension",
+        "$value": "11.25rem",
+        "$description": "180px"
+      },
+      "46": {
+        "$type": "dimension",
+        "$value": "11.5rem",
+        "$description": "188px"
+      },
+      "47": {
+        "$type": "dimension",
+        "$value": "11.75rem",
+        "$description": "192px"
+      },
+      "48": {
+        "$type": "dimension",
+        "$value": "12rem",
+        "$description": "192px"
+      },
+      "49": {
+        "$type": "dimension",
+        "$value": "12.25rem",
+        "$description": "196px"
+      },
+      "50": {
+        "$type": "dimension",
+        "$value": "12.5rem",
+        "$description": "200px"
+      },
+      "51": {
+        "$type": "dimension",
+        "$value": "12.75rem",
+        "$description": "204px"
+      },
+      "52": {
+        "$type": "dimension",
+        "$value": "13rem",
+        "$description": "208px"
+      },
+      "53": {
+        "$type": "dimension",
+        "$value": "13.25rem",
+        "$description": "212px"
+      },
+      "54": {
+        "$type": "dimension",
+        "$value": "13.5rem",
+        "$description": "216px"
+      },
+      "55": {
+        "$type": "dimension",
+        "$value": "13.75rem",
+        "$description": "220px"
+      },
+      "56": {
+        "$type": "dimension",
+        "$value": "14rem",
+        "$description": "224px"
+      },
+      "57": {
+        "$type": "dimension",
+        "$value": "14.25rem",
+        "$description": "228px"
+      },
+      "58": {
+        "$type": "dimension",
+        "$value": "14.5rem",
+        "$description": "232px"
+      },
+      "59": {
+        "$type": "dimension",
+        "$value": "14.75rem",
+        "$description": "236px"
+      },
+      "60": {
+        "$type": "dimension",
+        "$value": "15rem",
+        "$description": "240px"
+      },
+      "61": {
+        "$type": "dimension",
+        "$value": "15.25rem",
+        "$description": "244px"
+      },
+      "62": {
+        "$type": "dimension",
+        "$value": "15.5rem",
+        "$description": "248px"
+      },
+      "63": {
+        "$type": "dimension",
+        "$value": "16rem",
+        "$description": "252px"
+      },
+      "64": {
+        "$type": "dimension",
+        "$value": "16rem",
+        "$description": "256px"
+      },
+      "65": {
+        "$type": "dimension",
+        "$value": "16.25rem",
+        "$description": "260px"
+      },
+      "66": {
+        "$type": "dimension",
+        "$value": "16.5rem",
+        "$description": "264px"
+      },
+      "67": {
+        "$type": "dimension",
+        "$value": "16.75rem",
+        "$description": "268px"
+      },
+      "68": {
+        "$type": "dimension",
+        "$value": "17rem",
+        "$description": "272px"
+      },
+      "69": {
+        "$type": "dimension",
+        "$value": "17.25rem",
+        "$description": "276px"
+      },
+      "70": {
+        "$type": "dimension",
+        "$value": "17.5rem",
+        "$description": "280px"
+      },
+      "71": {
+        "$type": "dimension",
+        "$value": "17.75rem",
+        "$description": "284px"
+      },
+      "72": {
+        "$type": "dimension",
+        "$value": "18rem",
+        "$description": "288px"
+      },
+      "73": {
+        "$type": "dimension",
+        "$value": "18.25rem",
+        "$description": "292px"
+      },
+      "74": {
+        "$type": "dimension",
+        "$value": "18.5rem",
+        "$description": "296px"
+      },
+      "75": {
+        "$type": "dimension",
+        "$value": "19rem",
+        "$description": "300px"
+      },
+      "76": {
+        "$type": "dimension",
+        "$value": "19rem",
+        "$description": "304px"
+      },
+      "77": {
+        "$type": "dimension",
+        "$value": "19.25rem",
+        "$description": "308px"
+      },
+      "78": {
+        "$type": "dimension",
+        "$value": "19.5rem",
+        "$description": "312px"
+      },
+      "79": {
+        "$type": "dimension",
+        "$value": "20rem",
+        "$description": "316px"
+      },
+      "80": {
+        "$type": "dimension",
+        "$value": "20rem",
+        "$description": "320px"
+      },
+      "81": {
+        "$type": "dimension",
+        "$value": "20.25rem",
+        "$description": "324px"
+      },
+      "82": {
+        "$type": "dimension",
+        "$value": "20.5rem",
+        "$description": "328px"
+      },
+      "83": {
+        "$type": "dimension",
+        "$value": "20.75rem",
+        "$description": "332px"
+      },
+      "84": {
+        "$type": "dimension",
+        "$value": "21rem",
+        "$description": "336px"
+      },
+      "85": {
+        "$type": "dimension",
+        "$value": "21.25rem",
+        "$description": "340px"
+      },
+      "86": {
+        "$type": "dimension",
+        "$value": "21.5rem",
+        "$description": "344px"
+      },
+      "87": {
+        "$type": "dimension",
+        "$value": "21.75rem",
+        "$description": "348px"
+      },
+      "88": {
+        "$type": "dimension",
+        "$value": "22rem",
+        "$description": "352px"
+      },
+      "89": {
+        "$type": "dimension",
+        "$value": "22.25rem",
+        "$description": "356px"
+      },
+      "90": {
+        "$type": "dimension",
+        "$value": "22.5rem",
+        "$description": "360px"
+      },
+      "91": {
+        "$type": "dimension",
+        "$value": "22.75rem",
+        "$description": "364px"
+      },
+      "92": {
+        "$type": "dimension",
+        "$value": "23rem",
+        "$description": "368px"
+      },
+      "93": {
+        "$type": "dimension",
+        "$value": "23.25rem",
+        "$description": "372px"
+      },
+      "94": {
+        "$type": "dimension",
+        "$value": "23.5rem",
+        "$description": "374px"
+      },
+      "95": {
+        "$type": "dimension",
+        "$value": "23.75rem",
+        "$description": "376px"
+      },
+      "96": {
+        "$type": "dimension",
+        "$value": "24rem",
+        "$description": "384px"
+      },
+      "97": {
+        "$type": "dimension",
+        "$value": "24.25rem",
+        "$description": "388px"
+      },
+      "98": {
+        "$type": "dimension",
+        "$value": "24.5rem",
+        "$description": "392px"
+      },
+      "99": {
+        "$type": "dimension",
+        "$value": "24.75rem",
+        "$description": "396px"
+      },
+      "100": {
+        "$type": "dimension",
+        "$value": "25rem",
+        "$description": "400px"
+      },
+      "px": {
+        "$type": "dimension",
+        "$value": "1px"
+      }
+    },
+    "border-radius": {
+      "rounded-none": {
+        "$type": "dimension",
+        "$value": "0rem",
+        "$description": "0px"
+      },
+      "rounded-sm": {
+        "$type": "dimension",
+        "$value": "0.125rem",
+        "$description": "2px"
+      },
+      "rounded-default": {
+        "$type": "dimension",
+        "$value": "0.25rem",
+        "$description": "4px"
+      },
+      "rounded-md": {
+        "$type": "dimension",
+        "$value": "0.375rem",
+        "$description": "6px"
+      },
+      "rounded-lg": {
+        "$type": "dimension",
+        "$value": "0.5rem",
+        "$description": "8px"
+      },
+      "rounded-xl": {
+        "$type": "dimension",
+        "$value": "0.75rem",
+        "$description": "12px"
+      },
+      "rounded-2xl": {
+        "$type": "dimension",
+        "$value": "1rem",
+        "$description": "16px"
+      },
+      "rounded-3xl": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "$description": "24px"
+      },
+      "rounded-full": {
+        "$type": "dimension",
+        "$value": "9999px"
+      }
+    },
+    "border-width": {
+      "0": {
+        "$type": "dimension",
+        "$value": "0px"
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "8px"
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": "1px"
+      }
+    },
+    "screens": {
+      "2xs": {
+        "$type": "dimension",
+        "$value": "320px",
+        "$description": "This is NOT a standard tailwind breakpoint but is important to consider for people using mobile phone web browsers."
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "376px",
+        "$description": "This is NOT a standard tailwind breakpoint but is important to consider for people using mobile phone web browsers."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "640px",
+        "$description": "The TABLET screen by default in tailwind.config.js \nTo be condidered as the first size that is NOT mobile, and therefore may require custom styling."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "768px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "1024px",
+        "$description": "The LAPTOP screen by default in tailwind.config.js "
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "1280px",
+        "$description": "The DESKTOP screen by default in tailwind.config.js "
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "1536px",
+        "$description": "The breakpoint used for EXTRA WIDE DESKTOP devices\n"
+      }
+    },
+    "outline-width": {
+      "0": {
+        "$type": "dimension",
+        "$value": "0px"
+      },
+      "1": {
+        "$type": "dimension",
+        "$value": "1px"
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "8px"
+      }
+    },
+    "outline-offset": {
+      "0": {
+        "$type": "dimension",
+        "$value": "0px"
+      },
+      "1": {
+        "$type": "dimension",
+        "$value": "1px"
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "8px"
+      }
+    }
+  },
+  "rem_base": {
+    "$type": "dimension",
+    "$value": "16px",
+    "$description": "This token is referenced in the Tokens Studio plugin setting as the value of 1 rem unit as a personal preference. If you don't use this setting you may remove this token. "
+  },
+  "NOTES_on_TW-DIMENSIONS": {
+    "$type": "other",
+    "$value": "See Description",
+    "$description": "To keep the number of tokens minimal, the FIXED DIMENSION tokens can be applied to padding, margin, space-betweem gap, width and hight element properties. Looking at TW Docs, the code for these classes differs, but the number and the valiue are consistent. \n\nEx: space-x-1 is 0.25rem space between on the x-axis which is the same as the fixed.1 token. \n\npy-1 is padding top and bottom at 0.25rem which is the same as the fixed.1 token. \n\nSo it makes sense to apply these tokens to these values, and let developers worry about the code classes. They will see the dimension token name applied via variables which should speed up the development process. "
+  },
+  "NOTES_on_OUTLINE-OFFSET": {
+    "$type": "other",
+    "$value": "Commonly used to create \"focus rings\"",
+    "$description": "The space between the element and the outline. \n\nIn Figma, it is applied as a stroke width via border token to a frame that mimics the outline. The frame has  a border and no fill, then is absolutely positioned on the parent element with constraints set TOP + BOTTOM, RIGHT + LEFT to allow for autolayout to control outline. \n\nTW DOCS -> https://tailwindcss.com/docs/outline-offset"
+  },
+  "NOTES_on_OUTLINE-WIDTH": {
+    "$type": "other",
+    "$value": "Commonly used to create \"focus rings\"",
+    "$description": "The width of the outline. \n\nIn Figma, it is applied as a stroke width via border token to a frame that mimics the outline. The frame has  a border and no fill, then is absolutely positioned on the parent element with constraints set TOP + BOTTOM, RIGHT + LEFT to allow for autolayout to control outline. \n\nBorder tokens are composite tokens and will need to be transofrmed to see their values in code. \n\nTW DOCS -> https://tailwindcss.com/docs/outline-width"
+  },
+  "NOTES_on_BORDER-WIDTH": {
+    "$type": "other",
+    "$value": "Applied to any element with a border",
+    "$description": "The width of the border. In Figma, it is applied as a stroke width via border token to a frame. As border tokens are composite, they will need to be transformed to see all values in code. \n\nTW DOCS -> https://tailwindcss.com/docs/border-width"
+  }
+}
